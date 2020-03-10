@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"/>
+	<script src="cont.js"/>
+		<script type="text/javascript" src="angular-route.min.js"></script>
+
+	<style type="text/css">
+
+		html,body{
+			width: 100%;
+			height: 100%;
+		}		
+		h3{
+			float:left;
+			padding: 2px 2px 2px 2px;
+			margin: 4px 4px 4px 4px;
+			text-align: center;
+		}
+		#d2{
+			padding: 2px 2px 2px 2px;
+		}
+		#d{
+			padding:2px 2px 2px 2px;
+
+
+		}
+		#app{
+			width: 700px;
+			
+			border-style: solid;
+			margin-left: 100px;
+			margin-top: 20px;
+			padding-left:40px;
+
+			
+		}
+		#ins{
+			width: 600px;
+			
+			padding: 20px 20px 20px 20px;
+
+		}
+		input{
+			margin-bottom: 6px;
+		}
+
+	</style>
+	<title></title>
+</head>
+<body >
+
+	<div id="app">
+		<h1>SRM University,KTR,Chennai</h1>
+<button class="btn-danger" style="float: right;padding: 3px 3px 3px 3px;margin-right: 4px;" ng-click="back()"><-back</button>
+		<div id="ins">
+<header>
+		<center><img src="Profile.png" align="left" width="30px" height="30px"></center><div id="d"><strong>&nbsp;&nbsp;9:00 AM - 10:30 AM</strong><br>
+
+&nbsp;&nbsp;SAMSUNG SHORTLIST
+	
+
+</header>
+<table style="font-size: 28px;">
+	<tr>
+		<td>&nbsp;&nbsp;{{total}}&nbsp;</td>
+		<td>&nbsp;&nbsp;{{present}}</td>
+		<td>&nbsp;&nbsp;{{absent}}</td>
+	</tr>
+	<tr>
+		<td><strong>Total&nbsp;&nbsp;</strong></td>
+		<td><strong>Present&nbsp;&nbsp;</strong></td>
+		<td><strong>Absent&nbsp;&nbsp;</strong></td>
+	</tr>
+
+</table>
+
+	<br><br>
+	<div id="d2">
+		<input type="search"  placeholder="Search for candidates"name="" class="form-control" ng-model="search"/><span>{{message}}</span>
+	<li style="list-style: none;"id="ninja" ng-repeat="stud in students | orderBy:stud.name |filter:search"  >
+		<p><strong>Name:</strong>{{stud.Name}}</h2>
+		<p><strong>RegNo:</strong>{{stud.Reg}}</p>
+		<p><strong>College:</strong>{{stud.College}}	</p>
+			<p><strong>program:</strong>{{stud.Program}}</p>
+			<p><strong>Course:</strong>{{stud.Course}}</p>
+			
+			
+
+		<hr><br>
+		</l1>
+	</div>
+
+	</div>
+
+</div>
+</body>
+</html>

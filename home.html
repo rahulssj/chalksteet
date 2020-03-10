@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"/>
+	<script src="cont.js"/>
+		<script type="text/javascript" src="angular-route.min.js"></script>
+	
+	<style type="text/css">
+		.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: default;
+
+}
+#datess{
+}
+		h3{
+			float:left;
+			padding: 2px 2px 2px 2px;
+			margin: 4px 4px 4px 4px;
+			text-align: center;
+		}
+		#d2{
+			padding: 2px 2px 2px 2px;
+		}
+		#d{
+			padding:2px 2px 2px 2px;
+
+
+		}
+		#app{
+			width: 700px;
+			height: 600px;
+			border-style: solid;
+			margin-left: 100px;
+			margin-top: 20px;
+			padding-left:40px;
+
+			
+		}
+		#ins{
+			width: 600px;
+			height: 600px;
+			padding: 20px 20px 20px 20px;
+
+		}
+
+	</style>
+	<title></title>
+</head>
+<body ng-controller="mctrl">
+	<div id="app">
+
+	<!--<div class="pagination">
+  <a href="#">&laquo;</a>
+
+  <a href="#" value="27" ><div ng-click="disp(27)">28</div></a>
+  <a href="#" value="28" ><div>29</div></a>
+  <a href="#" value="29" ><div>30</div></a>
+  <a href="#" value="30" ><div>01</div></a>
+  <a href="#" value="01" ><div>02</div></a>
+  <a href="#" value="02" ><div>03</div></a>
+  <a href="#" value="03" >&raquo;</a>
+
+</div>-->
+
+	
+		<h1>St.Joseph's University,Chennai</h1>
+
+		<div id="ins">
+<header>
+		<center><img src="Profile.png" align="left" width="30px" height="30px"></center><div id="d"><strong>&nbsp;&nbsp;9:00 AM - 10:30 AM</strong><br>
+
+&nbsp;&nbsp;Verbal Ability-Sentence Correction BE Computer Science G Batch
+	
+
+</header>
+
+	<div id="d2">
+		
+	<li style="list-style: none;"id="ninja" ng-repeat="ninja in ninjas | orderBy:ninja.time |filter:search" ng-show="ninja.Available" >
+		<strong>{{ninja.college}}</strong>
+		<strong>{{ninja.time}}</strong>	</strong><br>
+			<p>Verbal Ability-{{ninja.verbal}}</p><br>
+			<p>{{ninja.Dept}}
+			{{ninja.batch}}&nbsp;Batch</p><br><br>
+			
+			<button class="{{ninja.colorss}}" ng-click="sendmessage(ninja)">Attendance&nbsp;{{ninja.Attendance}}</button>
+			
+			
+
+		<hr><br>
+		</l1><br>
+	</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>
