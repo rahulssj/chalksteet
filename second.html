@@ -83,14 +83,15 @@
 	<br><br>
 	<div id="d2">
 		<input type="search"  placeholder="Search for candidates"name="" class="form-control" ng-model="search"/><span>{{message}}</span>
-	<li style="list-style: none;"id="ninja" ng-repeat="stud in students | orderBy:stud.name |filter:search " ng-show="!stud.Attendance"  >
+	<li style="list-style: none;"id="ninja" ng-repeat="stud in students | orderBy:stud.name |filter:search "   >
 		<p><strong>Name:</strong>{{stud.Name}}</h2>
 		<p><strong>RegNo:</strong>{{stud.Reg}}</p>
 		<p><strong>College:</strong>{{stud.College}}	</p>
 			<p><strong>program:</strong>{{stud.Program}}</p>
 			<p><strong>Course:</strong>{{stud.Course}}</p>
+			<p><strong>Status:</strong>{{stud.Attendance}}</p>
 			
-			<button class="btn-success" ng-click="changeData(stud)">Give Attendance</button>
+			<button class="btn-danger" ng-click="DeleteData(stud)">Remove Attendance</button>
 
 		<hr><br>
 		</l1>

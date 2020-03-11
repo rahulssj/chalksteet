@@ -16,6 +16,9 @@ controller:'mctrl'
 }).when('/first-success',{
 templateUrl:'first.html',
 controller:'Contact'
+}).when('/second',{
+templateUrl:'second.html',
+controller:'mctrl'
 }).otherwise({
 	redirectTo:'/home'
 });
@@ -31,13 +34,31 @@ $scope.sendmessage=function(){
 
 app.controller('mctrl',['$scope','$http','$location',function($scope,$http,$location){
 
+		$scope.DeleteData=function(stud){
+			student.Attendance=true;
+
+			
+			$scope.absent=$scope.total+1;
+			$scope.present=$scope.present-1;
+			$scope.total=$scope.total+1;
+		}
+		$scope.changeData=function(student){
+			
+			student.Attendance=true;
+
+			
+			$scope.absent=$scope.total-1;
+			$scope.present=$scope.present+1;
+			$scope.total=$scope.total-1;
+			}
+
 		$scope.sendmessage=function(ninja){
 			console.log("inside");
 			if(ninja.id==1){
 			$location.path('first');
 		}
 		else{
-		$location.path('/');	
+		$location.path("second");	
 		}
 		}
 
@@ -72,10 +93,16 @@ id:2
 ];
 $http.get('data.json').then(function(data){
 $scope.students=data.data;
+for(var i=0;i<$scope.students.length;i++){
+$scope.students[i].Attendance=false;	
+}
+
+console.log($scope.students);
 console.log($scope.students.length);
 	$scope.total=$scope.students.length;
-	$scope.present="553";
-	$scope.absent="2";
+	$scope.present=0;
+	$scope.absent=$scope.total;
+	$scope.temp=$scope.total;
 });
 }]);
 
