@@ -35,7 +35,7 @@ $scope.sendmessage=function(){
 app.controller('mctrl',['$scope','$http','$location',function($scope,$http,$location){
 
 		$scope.DeleteData=function(stud){
-			student.Attendance=true;
+			student.Attendance=false;
 
 			
 			$scope.absent=$scope.total+1;
